@@ -1,58 +1,137 @@
 # QR Business Profile
 
-A clean, responsive web app that scans a QR code and uses the decoded URL to load a business profile from a REST API.
-
-![HTML](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white) ![CSS](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=222)
-
-## Features
-
-- Camera-based QR scanning with the browser’s secure media APIs
-- Validates scanned HTTP/HTTPS API URLs before requesting them
-- Loading, success, and error feedback
-- Responsive business profile card with email, phone, and website links
-- Safe DOM rendering (no API data is injected as HTML)
-- One-click live demo, so the project is easy to test without a QR code
-
-## How it works
-
-1. Click **Start camera scan** and grant camera permission.
-2. Scan a QR code containing the URL of a JSON business-profile API endpoint.
-3. The app fetches the JSON response and displays the profile.
-
-For a quick test, use the included live-demo button or create a QR code that contains:
-
-```text
-https://jsonplaceholder.typicode.com/users/1
-```
-
-## Run locally
-
-Camera access requires a secure context, so run the project with a local development server rather than opening the HTML file directly.
-
-```bash
-npx serve .
-```
-
-Then open the local URL shown in your terminal. You can also deploy the repository on GitHub Pages, Netlify, or Vercel.
-
-## API response shape
-
-The app supports common fields such as `name`, `email`, `phone`, `website`, and the optional `company.catchPhrase`.
-
-```json
-
-```
-
-## Tech stack
-
-- HTML5 and CSS3
-- Vanilla JavaScript and Fetch API
-- [html5-qrcode](https://github.com/mebjas/html5-qrcode) (loaded via CDN)
-
-## Author
-
-**Sarthak** · [sarthakmlop@gmail.com](mailto:sarthakmlop@gmail.com)
+A responsive web application that scans a QR code and loads a business profile from a REST API.
 
 ---
 
-If you found this useful, consider giving the repository a star.
+## Project Flow
+
+```text
+User Opens Web Application
+            │
+            ▼
+Clicks "Start Camera Scan"
+            │
+            ▼
+Browser Requests Camera Permission
+            │
+            ▼
+QR Code is Scanned
+            │
+            ▼
+Extract URL from QR Code
+            │
+            ▼
+Validate URL
+            │
+            ▼
+Send GET Request to Business API
+            │
+            ▼
+Receive JSON Response
+            │
+            ▼
+Parse Business Information
+            │
+            ▼
+Display Business Profile
+```
+
+---
+
+## Workflow
+
+### 1. Start the Scanner
+The user clicks the **Start Camera Scan** button.
+
+### 2. Camera Access
+The browser asks for camera permission and opens the QR scanner.
+
+### 3. Scan QR Code
+The application scans the QR code and reads the encoded data.
+
+Example QR Content:
+
+```
+https://jsonplaceholder.typicode.com/users/1
+```
+
+### 4. Validate the URL
+The application checks that the scanned value is a valid HTTP/HTTPS URL before making a request.
+
+### 5. Fetch Business Profile
+A GET request is sent to the API.
+
+Example:
+
+```
+GET https://jsonplaceholder.typicode.com/users/1
+```
+
+### 6. Receive Response
+
+Example JSON:
+
+```json
+{
+  "name": "Leanne Graham",
+  "email": "leanne@example.com",
+  "phone": "1-770-736-8031",
+  "website": "hildegard.org"
+}
+```
+
+### 7. Display Profile
+The application displays:
+
+- Business Name
+- Email
+- Phone Number
+- Website
+
+### 8. Error Handling
+
+The application handles:
+
+- Invalid QR codes
+- Invalid URLs
+- Camera permission denied
+- API request failures
+- Network errors
+
+---
+
+## Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript (ES6)
+- Fetch API
+- html5-qrcode Library
+
+---
+
+## Folder Structure
+
+```
+qr-business-profile/
+│
+├── README.md
+├── index.html
+├── style.css
+├── script.js
+├── assets/
+└── screenshots/
+```
+
+---
+
+## Future Improvements
+
+- Backend authentication
+- Database integration
+- Business search
+- Profile editing
+- QR code generation
+- Dark mode
+- Offline caching
