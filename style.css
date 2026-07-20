@@ -1,0 +1,183 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  color: #172036;
+  background: #f5f4ff;
+}
+
+.app-shell {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 0 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+h1,
+h2 {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h1 em,
+.eyebrow,
+.section-label {
+  color: #5c4bdf;
+  font-style: normal;
+}
+
+.intro,
+.card-heading p,
+.status,
+.profile-header p,
+footer {
+  color: #69738a;
+  line-height: 1.6;
+}
+
+.scanner-card,
+.profile-card {
+  padding: 25px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-heading,
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.scan-icon,
+.avatar {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #5c4bdf;
+  color: white;
+  font-weight: bold;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+.reader {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+#reader video {
+  border-radius: 12px;
+}
+
+button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.primary-button {
+  color: white;
+  background: #5c4bdf;
+}
+
+.primary-button:hover {
+  background: #4134b7;
+}
+
+.text-button {
+  color: #5c4bdf;
+  background: transparent;
+}
+
+.status {
+  text-align: center;
+  font-size: 13px;
+}
+
+.status.error {
+  color: #c3425a;
+}
+
+.status.success {
+  color: #178559;
+}
+
+.profile-section {
+  grid-column: 1 / -1;
+}
+
+.profile-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.profile-field {
+  padding: 12px;
+  border: 1px solid #e7eaf0;
+  border-radius: 10px;
+  color: #172036;
+  text-decoration: none;
+}
+
+.profile-field span {
+  display: block;
+  color: #69738a;
+  font-size: 12px;
+}
+
+.profile-field strong {
+  display: block;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  font-size: 13px;
+}
+
+footer a {
+  color: #5c4bdf;
+  text-decoration: none;
+}
+
+@media (max-width: 700px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-top: 35px;
+  }
+
+  h1 {
+    font-size: 38px;
+  }
+
+  .profile-details {
+    grid-template-columns: 1fr;
+  }
+}

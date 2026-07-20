@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Scan a QR code to load a business profile from an API." />
+    <title>QR Profile | Scan a business</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow"><span class="pulse-dot"></span> QR-powered connections</p>
+        <h1 id="page-title">Meet a business in <em>one scan.</em></h1>
+        <p class="intro">Point your camera at a QR code. We’ll securely fetch and show the business profile linked to it.</p>
+      </section>
+
+      <section class="scanner-card" aria-label="QR scanner">
+        <div class="card-heading">
+          <div class="scan-icon" aria-hidden="true">⌗</div>
+          <div><h2>Business scanner</h2><p>Scan a profile QR to begin</p></div>
+        </div>
+        <div id="reader" class="reader" aria-label="Camera preview"></div>
+        <button id="scanBtn" class="primary-button" type="button"><span aria-hidden="true">▣</span> Start camera scan</button>
+        <button id="demoBtn" class="text-button" type="button">No QR code? Try the live demo</button>
+        <p id="status" class="status" role="status" aria-live="polite">Your camera will only be used while scanning.</p>
+      </section>
+
+      <section id="profileSection" class="profile-section" hidden aria-live="polite">
+        <p class="section-label">Profile found</p>
+        <article id="profile" class="profile-card"></article>
+      </section>
+    </main>
+    <footer>Built by <a href="mailto:sarthakmlop@gmail.com">Sarthak</a> · QR Business Profile</footer>
+
+    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
