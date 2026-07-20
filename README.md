@@ -40,13 +40,7 @@ Then open the local URL shown in your terminal. You can also deploy the reposito
 The app supports common fields such as `name`, `email`, `phone`, `website`, and the optional `company.catchPhrase`.
 
 ```json
-{
-  "name": "Acme Studio",
-  "email": "hello@acme.test",
-  "phone": "+91 98765 43210",
-  "website": "acme.test",
-  "company": { "catchPhrase": "Design that moves business" }
-}
+
 ```
 
 ## Tech stack
